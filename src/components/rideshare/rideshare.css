@@ -1,0 +1,109 @@
+.share-container{
+    background: url(../../images/login-bg2.jpg) no-repeat center center fixed;
+    width: 100%;
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.search-result-container{
+    background-color:rgba(0,0,0,0.09);
+    border-radius: 10px;
+    padding: 20px;
+    height: 80%;
+}
+.ride-info{
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+.ride-info span{
+    margin-left: 20px;
+    color: #3742fa;
+    font-weight: bold;
+    font-size: 17px;
+}
+.tour-info{
+    background-color:#3742fa;
+    border-radius: 10px;
+    padding: 10px;
+}
+.place-info{
+    padding: 10px;
+    position: relative;
+}
+
+
+.place-info::before{
+    content: "";
+    height: 48px;
+    width: 2px;
+    position:absolute;
+    background-color: white;
+    left: 15px;
+    top:17px;
+}
+
+.from-place::before{
+    content: "";
+    height: 12px;
+    width: 12px;
+    position:absolute;
+    background-color: white;
+    left: 10px;
+    top:16px;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.to-place::before{
+    content: "";
+    height: 12px;
+    width: 12px;
+    position:absolute;
+    background-color: white;
+    left: 10px;
+    bottom:14px;
+    clip-path: circle(50% at 50% 50%);
+}
+
+.tour-info span{
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    margin-left: 20px;
+}
+.price{
+    padding-left: 0px;
+}
+
+.inp-field{
+    width: 100%;
+    height: 50px;
+    outline: none;
+    background: white;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border:none;
+    
+}
+.search-btn{
+    width: 100%;
+    height: 50px;
+    outline: none;
+    background: #3742fa;
+    margin-top: 15px;
+    border-radius: 5px;
+    border:none;
+    color: white;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.map img{
+    width: 80%;
+    height: 100%;
+}

@@ -1,23 +1,45 @@
-import logo from './logo.svg';
+import React,{createContext,useState} from 'react';
 import './App.css';
-
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+import Header from './components/header/Header';
+import Login from './components/login/Login';
+import Home from './components/home/Home';
+import Notfound from './components/nofound/Notfound';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import Rideshare from './components/rideshare/Rideshare';
+import PrivateRoute from './components/privateroute/PrivateRoute';
+export const userContext = createContext()
 function App() {
+  const [loggedInUser,setloggedInUser] = useState({})
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="">
+    <userContext.Provider value={[loggedInUser,setloggedInUser]}>
+    <Router>
+       <Switch>
+       <Route path="/home">
+         <Home></Home>
+         </Route>
+         <Route path="/login">
+         <Login></Login>
+         </Route>
+         <PrivateRoute path={`/rideshare/:id`}>
+         <Rideshare></Rideshare>
+         </PrivateRoute>
+
+         <Route exact path="/">
+         <Home></Home>
+         </Route>
+         <Route path="*">
+         <Notfound></Notfound>
+         </Route>
+
+       </Switch>
+     </Router>
+     </userContext.Provider>
     </div>
   );
 }
